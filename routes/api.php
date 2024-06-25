@@ -15,3 +15,5 @@ Route::get("/sliders", [SliderController::class, 'index']);
 Route::get('/categories', [CategoryController::class, 'index']);
 
 Route::get('/doctors', [DoctorController::class, 'index']);
+
+Route::get('/doctors/{category}', [DoctorController::class, 'getDoctorsByCategory']);

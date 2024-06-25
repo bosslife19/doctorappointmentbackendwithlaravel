@@ -17,12 +17,12 @@ return new class extends Migration
             $table->string('address');
             $table->string('patients');
             $table->string('year_of_experience');
-            $table->time('startTime');
-            $table->time('endTime');
+            $table->time('startTime')->default(now());
+            $table->time('endTime')->default(now());
             $table->text('about');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->integer('phone');
+            $table->integer('phone')->nullable();
             $table->string('image');
             $table->boolean('premium')->default(false);
             $table->timestamps();
