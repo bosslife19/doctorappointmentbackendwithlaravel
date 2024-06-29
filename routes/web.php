@@ -30,6 +30,7 @@ Route::get('/admin/doctors', [AdminController::class, 'loadDoctorListing'])
 Route::get('/admin/create/doctor', [AdminController::class, 'loadDoctorForm']);
 Route::get('/admin/create/specialty', [AdminController::class, 'loadSpecialtyForm']);
 Route::get('/admin/specialties', [AdminController::class, 'loadAllSpecialties'])->name('admin-specialties');
+Route::get('/edit/specialty/{id}', [AdminController::class, 'loadEditSpecialtyForm']);
 });
 
 

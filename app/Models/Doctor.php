@@ -11,7 +11,7 @@ class Doctor extends Model
 
     protected $guarded = [];
     // protected $fillable = ['name'];
-    public function category(){
-        return $this->belongsTo(Category::class, 'category_id');
+    public function specialty(){
+        return $this->belongsTo(Specialties::class, 'specialty_id');
     }
 }

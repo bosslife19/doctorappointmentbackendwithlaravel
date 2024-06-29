@@ -1,10 +1,18 @@
 <div>
+    @if (session()->has('message'))
+    <div class="mt-2 bg-teal-500 text-sm text-white rounded-lg p-4" role="alert">
+      <span class="font-bold block">Success</span>{{session('message')}}.
+    </div>
+    
+    @endif
     <div class="py-12 bg-white">
+        
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-    <form wire:submit="save" class="flex flex-col gap-3">
+    <form wire:submit="update" class="flex flex-col gap-3">
         <!-- Name -->
         <div>
+            
             <x-input-label for="name" :value="__('Specialty Name')" />
             <x-text-input wire:model="name" id="name" class="block mt-1 w-full" type="text" name="name"  autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
@@ -35,7 +43,7 @@
 
 
             <x-primary-button class="ms-4">
-                {{ __('Save') }}
+                {{ __('Update') }}
             </x-primary-button>
         </div>
     </form>

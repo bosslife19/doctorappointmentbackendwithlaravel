@@ -16,6 +16,7 @@ class AdminController extends Controller
      }
 
      public function loadDoctorForm(){
+     
         return view('admin.doctor-form');
      }
 
@@ -25,5 +26,10 @@ class AdminController extends Controller
 
      public function loadSpecialtyForm(){
       return view('admin.specialty-form');
+     }
+
+     public function loadEditSpecialtyForm($id){
+
+      return view('admin.edit-specialty-form', ['specialty_id'=>$id]);
      }
 }
